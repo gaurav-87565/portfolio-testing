@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node deploy-commands.js && node server.js"
+    "start": "node deploy-commands.js && node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
     "cors": "^2.8.5",
     "discord.js": "^14.18.0",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongoose": "^7.0.0", 
+    "nodemon": "^2.0.20"
   }
 }
