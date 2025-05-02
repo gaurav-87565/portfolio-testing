@@ -1,0 +1,151 @@
+/* Base layout for the blogs page */
+body {
+    background-color: #2f3136;
+    color: #dcddde;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Center main content */
+  main.center {
+    padding: 100px 20px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Page title */
+  .page-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+  
+  /* Blog cards */
+  .blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .blog-card {
+    background-color: #202225;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #40444b;
+    transition: background 0.3s;
+  }
+  
+  .blog-card:hover {
+    background-color: #292b2f;
+  }
+  
+  .blog-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+  }
+  
+  .blog-date {
+    font-size: 0.9rem;
+    color: #b9bbbe;
+    margin-bottom: 10px;
+  }
+  
+  .blog-excerpt {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .blog-card .btn {
+    margin-top: 10px;
+    display: inline-block;
+    background: #7289da;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+  }
+  
+  .blog-card .btn:hover {
+    background: #5b6eae;
+  }
+  
+  /* Search Bar */
+  .search-container {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    background-color: #2f3136;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #202225;
+  }
+  
+  .search-container .search-icon {
+    color: #b9bbbe;
+    margin-right: 8px;
+    font-size: 1rem;
+  }
+  
+  .search-container input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #dcddde;
+    font-size: 0.95rem;
+    width: 180px;
+  }
+  
+  /* Responsive for small screens */
+  @media (max-width: 600px) {
+    .search-container {
+      right: 10px;
+      top: 70px;
+      padding: 5px 10px;
+    }
+  
+    .search-container input {
+      width: 130px;
+      font-size: 0.85rem;
+    }
+  
+    .blog-card h2 {
+      font-size: 1.2rem;
+    }
+  
+    .blog-card .btn {
+      font-size: 0.85rem;
+    }
+  }
+  
+  /* Highlighted No Matches Message */
+.no-matches.standout {
+  text-align: center;
+  color: #ff5c5c;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #2f3136;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: fit-content;
+  animation: fadeIn 0.5s ease-in-out;
+  box-shadow: 0 0 12px rgba(255, 92, 92, 0.4);
+}
+
+/* Simple Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
