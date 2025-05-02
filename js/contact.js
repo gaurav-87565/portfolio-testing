@@ -23,7 +23,7 @@ form.addEventListener('submit', async (e) => {
   const data = Object.fromEntries(formData.entries());
 
   try {
-    const res = await fetch('https://gaurav.dapirates.xyz/api/contact', {
+    const res = await fetch('https://portfolio-testing-q602.onrender.com/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)

@@ -3,13 +3,14 @@ const express = require('express');
 const path = require('path');
 const { Client, GatewayIntentBits, Partials, EmbedBuilder } = require('discord.js');
 const stats = require('./src/stats-tracker');
+const Blog = require('./src/controllers/blogController');  // Import Blog controller
 
 const app = express();
 
-// Setup Discord bot
+// Initialize Discord bot
 const bot = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages],
-  partials: [Partials.Channel]
+  partials: [Partials.Channel],
 });
 
 // Middleware
@@ -26,7 +27,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Format uptime function
+// Helper function to format uptime
 function formatUptime(ms) {
   const seconds = Math.floor(ms / 1000);
   const minutes = Math.floor(seconds / 60) % 60;
@@ -42,6 +43,15 @@ function formatUptime(ms) {
   if (seconds % 60 > 0 || parts.length === 0) parts.push(`${seconds % 60} sec`);
 
   return parts.join(' ');
+}
+
+// Admin authentication middleware
+function isAdmin(req, res, next) {
+  const password = req.headers['admin-password'];  // You could also use a more secure method
+  if (password !== process.env.ADMIN_PASSWORD) {
+    return res.status(403).json({ error: 'Unauthorized' });
+  }
+  next();
 }
 
 // API: Contact form handler
@@ -81,6 +91,75 @@ app.get('/api/stats', (req, res) => {
     visits: stats.visitCount,
     pings: stats.pingCount
   });
+});
+
+// Blog routes
+app.post('/api/blog', isAdmin, async (req, res) => {
+  try {
+    const { title, content } = req.body;
+    if (!title || !content) {
+      return res.status(400).json({ error: 'Title and content are required.' });
+    }
+    
+    const newBlog = await Blog.createBlog(title, content);
+    res.status(201).json({ success: true, blog: newBlog });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to create blog post.' });
+  }
+});
+
+app.get('/api/blogs', async (req, res) => {
+  try {
+    const blogs = await Blog.getAllBlogs();
+    res.status(200).json({ blogs });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to fetch blog posts.' });
+  }
+});
+
+app.get('/api/blog/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const blog = await Blog.getBlogById(id);
+    if (!blog) {
+      return res.status(404).json({ error: 'Blog post not found.' });
+    }
+    res.status(200).json({ blog });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to fetch blog post.' });
+  }
+});
+
+app.put('/api/blog/:id', isAdmin, async (req, res) => {
+  const { id } = req.params;
+  const { title, content } = req.body;
+  try {
+    const updatedBlog = await Blog.updateBlog(id, title, content);
+    if (!updatedBlog) {
+      return res.status(404).json({ error: 'Blog post not found.' });
+    }
+    res.status(200).json({ success: true, blog: updatedBlog });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to update blog post.' });
+  }
+});
+
+app.delete('/api/blog/:id', isAdmin, async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deletedBlog = await Blog.deleteBlog(id);
+    if (!deletedBlog) {
+      return res.status(404).json({ error: 'Blog post not found.' });
+    }
+    res.status(200).json({ success: true, message: 'Blog post deleted successfully.' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to delete blog post.' });
+  }
 });
 
 // Page routes
