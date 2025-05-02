@@ -183,6 +183,14 @@ app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages', 'contact.html'));
 });
 
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages', 'admin-dashboard.html'));
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages', 'admin-login.html'));
+});
+
 // 404 fallback
 app.use((req, res) => {
   res.status(404).send('404 - Page not found');
