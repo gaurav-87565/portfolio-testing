@@ -6,6 +6,11 @@ const stats = require('./src/stats-tracker');
 
 const app = express();
 
+// Ensure counters are initialized
+stats.visitCount = stats.visitCount || 0;
+stats.pingCount = stats.pingCount || 0;
+stats.startTime = stats.startTime || Date.now();
+
 // Setup Discord bot
 const bot = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages],
