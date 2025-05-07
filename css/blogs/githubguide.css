@@ -75,25 +75,3 @@
     background-color: #5865f2;
     color: white;
   }
-  
-  footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #23272a;
-    color: #b9bbbe;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.9em;
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      padding: 10px;
-    }
-    .sidebar {
-      margin-top: 30px;
-    }
-  }
-  

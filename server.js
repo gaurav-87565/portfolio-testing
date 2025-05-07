@@ -109,8 +109,8 @@ app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages', 'contact.html'));
 });
 
-app.get('/blog1', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages', 'blogs', 'blog1.html'));
+app.get('/githubguide', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages', 'blogs', 'githubguide.html'));
 });
 
 // 404 fallback
