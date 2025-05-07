@@ -284,6 +284,14 @@ body {
   transition: background 0.2s;
 }
 
+.read-more-item a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .read-more-item:hover {
   background-color: #5865f2;
   color: white;
