@@ -303,9 +303,11 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #23272a;
   color: #b9bbbe;
-  text-align: center;
-  padding: 10px;
-  font-size: 0.9em;
+  background: #202225;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
