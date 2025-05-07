@@ -319,3 +319,39 @@ footer {
   align-items: center;
   flex-wrap: wrap;
 }
+
+.code-block {
+  position: relative;
+  margin-top: 1rem;
+  background: #1e1e1e;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.code-block pre {
+  white-space: pre-wrap; /* Enables text wrapping */
+  word-break: break-word;
+  padding: 1rem;
+  color: #eee;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.4em 0.6em;
+  font-size: 0.75rem;
+  background: #2c2c2c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.copy-btn:hover {
+  background: #444;
+}
