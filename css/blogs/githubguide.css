@@ -4,15 +4,6 @@
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #2f3136;
-  color: #dcddde;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 .navbar,footer{
   background: #202225;
   padding: 10px 20px;
@@ -108,13 +99,6 @@ main.center{
   align-items: center;
   text-align: center;
   flex-direction: column;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
 }
 
 .title {
