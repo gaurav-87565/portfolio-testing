@@ -36,7 +36,7 @@ function type() {
     currentWordIndex = (currentWordIndex + 1) % words.length;
     delay = 500; // pause before typing next word
   } else {
-    delay = isDeleting ? 100 : 120; // type slow, delete a bit faster
+    delay = isDeleting ? 80 : 120; // type slow, delete a bit faster
   }
 
   setTimeout(type, delay);
