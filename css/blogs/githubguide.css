@@ -39,7 +39,7 @@
 .nav-links a{
   color: #dcddde;
   text-decoration: none;
-  transition: color 0.3s
+  transition: color 0.3s;
 }
 
 .nav-links a:hover,
@@ -63,32 +63,32 @@
 /* Responsive dropdown menu */
 @media (max-width: 768px) {
   .hamburger {
-      display: block;
+    display: block;
   }
 
   .nav-links {
-      display: none;
-      position: absolute;
-      top: 55px;
-      right: 20px;
-      background: #202225;
-      border: 1px solid #444;
-      border-radius: 10px;
-      padding: 10px 15px;
-      flex-direction: column;
-      gap: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      z-index: 1000;
-      width: 180px;
+    display: none;
+    position: absolute;
+    top: 55px;
+    right: 20px;
+    background: #202225;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 10px 15px;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+    width: 180px;
   }
 
   .nav-links.active {
-      display: flex;
+    display: flex;
   }
 
   .navbar {
-      position: relative;
-      justify-content: space-between;
+    position: relative;
+    justify-content: space-between;
   }
 }
 
@@ -108,113 +108,11 @@ main.center{
   text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.social-container {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.social-btn {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  cursor: pointer;
-}
-
-.social-btn:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.social-btn i {
-  font-size: 30px;
-  color: white;
-  transition: all 0.4s ease;
-  z-index: 2;
-}
-
-.social-btn .text {
-  position: absolute;
-  bottom: -100%;
-  width: 100%;
-  text-align: center;
-  padding: 5px 0;
-  font-weight: 500;
-  transition: all 0.4s ease;
-  color: white;
-  font-size: 14px;
-}
-
-.social-btn:hover .text {
-  bottom: 10px;
-}
-
-.social-btn:hover i {
-  transform: translateY(-15px);
-}
-
-.social-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transform: translateX(-100%);
-  transition: all 0.6s ease;
-}
-
-.social-btn:hover::before {
-  transform: translateX(100%);
-}
-
-/* Social media specific colors */
-.facebook { background: linear-gradient(45deg, #3b5998, #6d84b4); }
-.twitter { background: linear-gradient(45deg, #1da1f2, #0084b4); }
-.instagram { background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045); }
-.github { background: linear-gradient(45deg, #333, #6e5494); }
-.youtube { background: linear-gradient(45deg, #ff0000, #cc0000); }
-.linkedin { background: linear-gradient(45deg, #0077b5, #00a0dc); }
-
-/* Add ripple effect */
-.ripple {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple 0.6s linear;
-}
-
-@keyframes ripple {
-  to {
-      transform: scale(2.5);
-      opacity: 0;
-  }
-}
-
 .social-icons a{
   color: #fff;
   margin: 0 8px;
   font-size: 1.4rem;
   transition: color 0.3s;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -329,29 +227,11 @@ footer {
 }
 
 .code-block pre {
-  white-space: pre-wrap; /* Enables text wrapping */
+  white-space: pre-wrap;
   word-break: break-word;
   padding: 1rem;
   color: #eee;
   font-family: 'Courier New', monospace;
   margin: 0;
   font-size: 0.9rem;
-}
-
-.copy-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 0.4em 0.6em;
-  font-size: 0.75rem;
-  background: #2c2c2c;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.copy-btn:hover {
-  background: #444;
 }
