@@ -1,10 +1,10 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.navbar{
+.navbar {
   background: #202225;
   padding: 10px 20px;
   display: flex;
@@ -13,7 +13,7 @@
   flex-wrap: wrap;
 }
 
-.logo{
+.logo {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -23,35 +23,34 @@
   text-decoration: none;
 }
 
-.logo-img{
+.logo-img {
   width: 32px;
   height: 32px;
   object-fit: contain;
   border-radius: 5px;
 }
 
-.nav-links{
+.nav-links {
   display: flex;
   gap: 20px;
   list-style: none;
 }
 
-.nav-links a{
+.nav-links a {
   color: #dcddde;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .nav-links a:hover,
-.social-icons a:hover{
+.social-icons a:hover {
   color: #7289da;
 }
 
-.nav-links i{
+.nav-links i {
   margin-right: 6px;
 }
 
-/* Hamburger button - visible on mobile */
 .hamburger {
   display: none;
   font-size: 1.6rem;
@@ -60,7 +59,6 @@
   z-index: 1100;
 }
 
-/* Responsive dropdown menu */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -77,7 +75,7 @@
     padding: 10px 15px;
     flex-direction: column;
     gap: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     width: 180px;
   }
@@ -92,7 +90,7 @@
   }
 }
 
-main.center{
+main.center {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -105,10 +103,10 @@ main.center{
   color: #fff;
   font-size: 28px;
   text-align: center;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.social-icons a{
+.social-icons a {
   color: #fff;
   margin: 0 8px;
   font-size: 1.4rem;
@@ -120,7 +118,7 @@ body {
   background-color: #2c2f33;
   color: #dcddde;
   line-height: 1.6;
-  padding-bottom: 60px; /* space for footer */
+  padding-bottom: 60px;
 }
 
 .container {
@@ -134,15 +132,15 @@ body {
 .main-content {
   flex: 3;
   background-color: #36393f;
-  padding: 20px;
+  padding: 30px; /* increased padding */
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar {
   flex: 1;
   background-color: #2f3136;
-  padding: 20px;
+  padding: 25px; /* increased padding */
   border-radius: 10px;
 }
 
@@ -166,6 +164,7 @@ body {
 
 .blog-content p {
   margin-bottom: 16px;
+  line-height: 1.8; /* improved readability */
 }
 
 .sidebar h3 {
@@ -175,7 +174,7 @@ body {
 
 .read-more-item {
   margin-bottom: 12px;
-  padding: 10px;
+  padding: 12px 15px;
   background-color: #40444b;
   border-radius: 6px;
   cursor: pointer;
@@ -200,6 +199,7 @@ body {
     flex-direction: column;
     padding: 10px;
   }
+
   .sidebar {
     margin-top: 30px;
   }
